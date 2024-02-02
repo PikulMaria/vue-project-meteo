@@ -1,9 +1,14 @@
 <script setup>
-
+const props = defineProps({
+  weatherInfo: {
+    type: [Object, null],
+    required: true,
+  }
+})
 </script>
 
 <template>
-    <div class="section highlights">
+    <div v-if="weatherInfo" class="section highlights">
         <div class="title">
             Today's Highlights
         </div>
