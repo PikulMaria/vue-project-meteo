@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue';
 import WeatherSummary from './components/WeatherSummary.vue';
-import Hightlights from './components/Hightlights.vue';
+import Highlights from './components/Hightlights.vue';
 import Coords from './components/Coords.vue';
 import Humidity from './components/Humidity.vue';
 import { API_KEY, BASE_URL } from './const'
@@ -34,7 +34,7 @@ onMounted(getWeather)
                 <WeatherSummary v-if="!isError" :weatherInfo="weatherInfo" />
                 <div v-else class="error">
                   <div class="error-title">
-                    Oooops! Someting went wrong
+                    Oops! Something went wrong
                   </div>
                   <div v-if="weatherInfo?.message" class="error-message">
                     {{ capitalizeFirstLetter(weatherInfo?.message) }}
@@ -43,7 +43,7 @@ onMounted(getWeather)
               </div>
             </section>
             <section v-if="!isError" class="section section-right">
-              <Hightlights :weatherInfo="weatherInfo" />
+              <Highlights :weatherInfo="weatherInfo" />
             </section>
           </div>
           <div class="sections">
@@ -93,7 +93,7 @@ onMounted(getWeather)
     padding-right: 0
 
   &.section-error
-    min-width: 235 px
+    min-width: 235px
     width: auto
     padding-right: 0
 
@@ -148,13 +148,13 @@ onMounted(getWeather)
   @media (max-width: 767px)
     width: 100%
 .error
-  padding-top: 20 px
+  padding-top: 20px
 
   &-title
-    font-size: 18 px
+    font-size: 18px
     font-weight: 700
 
   &-message
-    padding-top: 10 px
-    font-size: 11 px
+    padding-top: 10px
+    font-size: 11px
 </style>
